@@ -88,7 +88,7 @@ func (a *TestACLAgent) ResolveToken(secretID string) (acl.Authorizer, error) {
 
 func (a *TestACLAgent) ResolveTokenToIdentityAndAuthorizer(secretID string) (structs.ACLIdentity, acl.Authorizer, error) {
 	if a.resolveAuthzFn == nil {
-		return nil, nil, fmt.Errorf("ResolveTokenToIdentityAndAuthorizer call is unexpected - no authz resolver callback set")
+		return nil, nil, fmt.Errorf("ResolveToken call is unexpected - no authz resolver callback set")
 	}
 
 	return a.resolveAuthzFn(secretID)
